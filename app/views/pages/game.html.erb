@@ -1,0 +1,17 @@
+******** Welcome to the longest word-game !********<br>
+Here is your grid :<br>
+<%= @grid %><br>
+**********************************************<br><br>
+
+What's your best shot ?<br><br>
+
+<% timestamp = Time.now.to_time.to_i %>
+<%= timestamp  %>
+
+<form action="/score">
+  <label for="attempt">best shot</label>
+  <input type="text" id="attempt" name="attempt" placeholder="give it a try">
+  <input type="hidden" id="grid" name="grid" value=<%= @grid.join %>>
+  <input type="hidden" id="timetaken" name="timestamp" value=<%= timestamp %>>
+  <input type="submit" value="Go!">
+</form>
